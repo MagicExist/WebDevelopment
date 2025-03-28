@@ -1,0 +1,144 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 200px 20px 0;
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+/* Inicio barra de navegación */
+.header {
+  background-color: #9ed0ec;
+  height: 80px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-radius: 6px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: black; /* Asegurar que los enlaces sean negros */
+  text-decoration: none;
+}
+
+/* Logo en la barra de navegación */
+.logoPrincipalbarranavegacion {
+  width: 100px;
+  height: 80px;
+}
+
+/* Menú de navegación */
+.nav-menu {
+  display: flex;
+  margin-right: 40px;
+  list-style: none;
+}
+
+.nav-menu-item {
+  font-size: 18px;
+  margin: 0 10px;
+  line-height: 80px;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+.nav-menu-link {
+  color: black; /* Asegurar que los enlaces del menú sean negros */
+  padding: 8px 12px;
+  border-radius: 3px;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+  background-color: #0095ff;
+  color: black; /* Mantener el color negro incluso en hover */
+  transition: 0.5s;
+}
+
+/* Botón de menú hamburguesa */
+.nav-toggle {
+  color: black; /* Hacer que el icono del toggle sea negro */
+  background: none;
+  border: none;
+  font-size: 30px;
+  padding: 0 20px;
+  line-height: 60px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+      padding-top: 70px;
+  }
+
+  .header {
+      height: 60px;
+  }
+
+  .logoPrincipalbarranavegacion {
+      width: 80px;
+      height: 60px;
+  }
+
+  .nav-menu {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      background-color: #2c3e50;
+      position: fixed;
+      top: 60px;
+      width: 100%;
+      padding: 20px 0;
+      height: calc(100% - 60px);
+      overflow-y: auto;
+      left: 100%;
+      transition: left 0.3s;
+  }
+
+  .nav-menu-item {
+      line-height: 70px;
+  }
+
+  .nav-menu-link {
+      color: black; /* Hacer que los enlaces sean negros en móviles */
+  }
+
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+      background: none;
+      color: black; /* Mantener el color negro en hover */
+  }
+
+  .nav-toggle {
+      display: block;
+  }
+
+  .nav-menu_visible {
+      left: 0;
+  }
+
+  .nav-toggle:focus:not(:focus-visible) {
+      outline: none;
+  }
+}

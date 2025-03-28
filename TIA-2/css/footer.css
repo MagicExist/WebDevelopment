@@ -1,0 +1,19 @@
+
+/* Fin presentaciones*/
+
+.footer {
+  margin-top: 10%;
+  background-color: #9ed0ec;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
