@@ -7,6 +7,7 @@ This repository contains all the activities and projects from Group E in the Web
 
 - [@Johhan Parra](https://github.com/MagicExist)  
 - [@Andres Gonzales](https://github.com/Darkandrox) 
+- [@Estefania Marin](https://github.com/Estefanii2730) 
 ## 📁 Repository Structure
 
 - [TIA-1](https://github.com/MagicExist/WebDevelopment/tree/main/TIA-1): **Teleconsultation Questionnaire**  
