@@ -7,3 +7,5 @@ class TipoProyectoRepository {
         return tipo_proyectos
     }
 }
+
+module.exports = TipoProyectoRepository
