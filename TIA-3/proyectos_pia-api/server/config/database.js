@@ -1,4 +1,5 @@
-require('dotenv').config()
+const path = require('path')
+require('dotenv').config({path:path.join(__dirname,'../../.env')})
 
 const {Pool} = require('pg')
 
@@ -10,4 +11,15 @@ const pool = new Pool({
     database: process.env.DB_DATABASE
 })
 
-module.exports = pool
+module.exports = {
+    executeQuery: async (text, params) => {
+        try {
+            const result = await pool.query(text, params)
+            return result.rows
+        } catch (error) {
+            console.error('Error executing query:', error)
+            throw error
+        }
+    },
+    pool
+}
