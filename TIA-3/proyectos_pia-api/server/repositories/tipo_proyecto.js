@@ -8,4 +8,4 @@ class TipoProyectoRepository {
     }
 }
 
-module.exports = TipoProyectoRepository
+module.exports = new TipoProyectoRepository()
