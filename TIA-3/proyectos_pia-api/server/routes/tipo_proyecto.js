@@ -2,12 +2,14 @@ const express = require('express')
 const router = express.Router()
 const TipoProyectoRepository = require('../repositories/tipo_proyecto')
 
-router.get('/',(req,res)=>{
+router.get('/',async (req,res)=>{
     try{
-        const tipo_proyectos = TipoProyectoRepository.getAll()
+        const tipo_proyectos = await TipoProyectoRepository.getAll()
         res.status(200).json(tipo_proyectos)
     }
     catch (error){
-        res.status(500).json({'messsage' : "Erro al obtener datos"})
+        res.status(500).json({'messsage' : "Error al obtener datos","Error" : error.message})
     }
 })
+
+module.exports = router
