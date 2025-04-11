@@ -34,6 +34,11 @@ class TipoProyectoRepository {
         let tipo_proyecto = await db.executeQuery(query,params)
         return tipo_proyecto
     }
+    async delete(id){
+        const query = "DELETE FROM tipo_proyecto WHERE id = $1 RETURNING *"
+        let tipo_proyecto = await db.executeQuery(query,[id])
+        return tipo_proyecto
+    }
 }
 
 module.exports = new TipoProyectoRepository()
