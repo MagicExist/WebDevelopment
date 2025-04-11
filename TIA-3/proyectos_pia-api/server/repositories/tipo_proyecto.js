@@ -22,6 +22,18 @@ class TipoProyectoRepository {
         let tipo_proyecto = await db.executeQuery(query,params)
         return tipo_proyecto
     }
+    async update(id,req){
+        const query = "UPDATE tipo_proyecto SET codigo = $1, descripcion = $2, abreviatura = $3,fecha_registro = $4 WHERE id = $5 RETURNING *;"
+        const params = [
+            req.codigo,
+            req.descripcion,
+            req.abreviatura,
+            req.fecha_registro,
+            id
+        ]
+        let tipo_proyecto = await db.executeQuery(query,params)
+        return tipo_proyecto
+    }
 }
 
 module.exports = new TipoProyectoRepository()
