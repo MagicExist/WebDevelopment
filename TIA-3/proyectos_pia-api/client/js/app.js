@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const baseUrl = 'http://localhost:3000/api/tipo_proyecto';
+    const baseUrl = 'http://localhost:3000/api/proyectos/tipos';
     const btnListar = document.getElementById('btn-listar');
     const btnCrear = document.getElementById('btn-crear');
     const btnActualizar = document.getElementById('btn-actualizar');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         : message;
     }
   
-    function validarCampos() {
+    function validarCampos(method) {
       const id = document.getElementById('id').value.trim();
       const codigo = document.getElementById('codigo').value.trim();
       const abreviatura = document.getElementById('abreviatura').value.trim();
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const fecha_registro  = document.getElementById('fecha_registro').value.trim();
   
 
-      if (!/^\d{8}$/.test(codigo)) {
+      if (!/^\d{8}$/.test(codigo) && method !== "POST") {
         alert('El código debe contener exactamente 8 dígitos numéricos.');
         return false;
       }
@@ -70,11 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Crear tipo de proyecto (POST)
     btnCrear.addEventListener('click', async () => {
-      if (!validarCampos()) return;
+      if (!validarCampos("POST")) return;
   
       const formData = new FormData(proyectoForm);
       const tipoProyecto = {
-        id: formData.get('id'),
         codigo: formData.get('codigo'),
         descripcion: formData.get('descripcion'),
         abreviatura: formData.get('abreviatura'),
