@@ -11,6 +11,17 @@ class TipoProyectoRepository {
         let tipo_proyecto = await db.executeQuery(query,[id])
         return tipo_proyecto
     }
+    async create(req){
+        const query = "INSERT INTO tipo_proyecto(codigo,descripcion,abreviatura,fecha_registro)VALUES($1,$2,$3,$4) RETURNING *;"
+        const params = [
+            req.codigo,
+            req.descripcion,
+            req.abreviatura,
+            req.fecha_registro
+        ]
+        let tipo_proyecto = await db.executeQuery(query,params)
+        return tipo_proyecto
+    }
 }
 
 module.exports = new TipoProyectoRepository()
