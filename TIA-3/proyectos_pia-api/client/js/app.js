@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         : message;
     }
   
-    function validarCampos(method) {
+    function validarCampos() {
       const id = document.getElementById('id').value.trim();
       const codigo = document.getElementById('codigo').value.trim();
       const abreviatura = document.getElementById('abreviatura').value.trim();
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const fecha_registro  = document.getElementById('fecha_registro').value.trim();
   
 
-      if (!/^\d{8}$/.test(codigo) && method !== "POST") {
+      if (!/^\d{8}$/.test(codigo)) {
         alert('El código debe contener exactamente 8 dígitos numéricos.');
         return false;
       }
