@@ -3,7 +3,7 @@
 This project is a practice that implements basic CRUD operations for the PA/PIA project types at IUPB.
 
 ## ✨ Features
-- Create, read, update, and delete vehicles  
+- Create, read, update, and delete
 - Follows best coding practices   
 - Middlewares
 
