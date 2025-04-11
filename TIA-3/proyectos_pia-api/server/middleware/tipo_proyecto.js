@@ -30,6 +30,13 @@ class TipoProyectoMiddleware{
         }
         next()
     }
+    static validateId(req,res,next){
+        const {id} = req.params
+        if(isNaN(id)){
+            res.status(400).json({ "error": 'El ID debe ser un número' });
+        }
+        next()
+    }
 }
 
 module.exports = TipoProyectoMiddleware
