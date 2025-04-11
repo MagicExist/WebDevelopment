@@ -62,4 +62,21 @@ router.put("/:id",TipoProyectoMiddleware.validateData,async(req,res)=>{
     }
 })
 
+router.delete('/:id',TipoProyectoMiddleware.validateId,async(req,res)=>{
+    try{
+        const {id} = req.params
+        const result = await TipoProyectoRepository.getById(id)
+
+        if (result.length === 0) {
+            return res.status(404).json({ "error": 'Elemento no encontrado' });
+        }
+        
+        res.status(200).json({'messsage' : "tipo proyecto eliminado correctamente","data" : result})
+    }
+    catch (error){
+        res.status(500).json({'messsage' : "Error al obtener datos","Error" : error.message})
+    }
+})
+
+
 module.exports = router
