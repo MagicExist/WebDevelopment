@@ -13,13 +13,9 @@ router.get('/',async (req,res)=>{
     }
 })
 
-router.get('/:id',async(req,res)=>{
+router.get('/:id',TipoProyectoMiddleware.validateId,async(req,res)=>{
     try{
         const {id} = req.params
-        if(isNaN(id)){
-            res.status(400).json({ "error": 'El ID debe ser un número' });
-        }
-
         const result = await TipoProyectoRepository.getById(id)
 
         if (result.length === 0) {
