@@ -9,4 +9,8 @@ class Asignatura extends Model
     public function estudiantes(){
         return $this->belongsToMany(Estudiante::class)->withTimestamps();
     }
+
+    public function docentes(){
+        return $this->belongsToMany(Docente::class)->withTimestamps();
+    }
 }
