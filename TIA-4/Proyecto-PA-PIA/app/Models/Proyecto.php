@@ -10,4 +10,7 @@ class Proyecto extends Model
         return $this->belongsToMany(Estudiante::class)->withTimestamps();
     }
 
+    public function docentes(){
+        return $this->belongsToMany(Docente::class)->withTimestamps();
+    }
 }
