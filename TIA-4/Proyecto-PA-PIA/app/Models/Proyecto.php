@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proyecto extends Model
 {
-    //
+    public function estudiantes(){
+        return $this->belongsToMany(Estudiante::class)->withTimestamps();
+    }
+
 }

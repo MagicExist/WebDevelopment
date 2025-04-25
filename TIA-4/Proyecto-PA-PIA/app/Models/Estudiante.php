@@ -11,4 +11,8 @@ class Estudiante extends Model
     public function asignaturas(){
         return $this->belongsToMany(Asignatura::class)->withTimestamps();
     }
+
+    public function proyectos(){
+        return $this->belongsToMany(Proyecto::class)->withTimestamps();
+    }
 }
