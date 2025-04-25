@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('asignatura_estudiante', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('asignaturas_id')->constrained()->onDelete('cascade');
+            $table->foreignId('estudiantes_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
